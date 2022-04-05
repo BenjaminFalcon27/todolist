@@ -1,0 +1,38 @@
+<div style="color: green">
+  <%= notice %>
+</div>
+
+<h1 class="header">Mes Listes</h1>
+
+<article class="article">
+  <div class="todo_lists">
+    <% @todo_lists.each do |todo_list| %>
+      <div class=list_list>
+        <a class="list_title" href="<%= todo_list_path(todo_list) %>">
+          <%= todo_list.title %>
+        </a>
+
+        <div class="edit_list">
+          <%= link_to "Edit", edit_todo_list_path(todo_list) %>
+        </div>
+
+        <div class="delete">
+          <%= button_to "Delete", todo_list_path(todo_list), method: :delete %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <a class="new_list" href="<%=new_todo_list_path %>">
+    <span class="create_list">
+      New
+      <i class="fa fa-plus"></i>
+    </span>
+  </a>
+</article>
+
+<footer>
+  <p class="copyright">@Copyright Trolais Benjamin</p>
+  <i class="fa fa-home"></i>
+</footer>
+

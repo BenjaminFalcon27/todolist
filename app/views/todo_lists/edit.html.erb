@@ -1,0 +1,16 @@
+<div class="header">
+  <h1>Editing todo list</h1>
+
+  <div class=back_edit>
+    <%= link_to "Back", todo_lists_path %>
+  </div>
+</div>
+
+<article class="article_edit">
+  <%= render "form", todo_list: @todo_list %>
+</article>
+
+<footer>
+  <p class="copyright">@Copyright Trolais Benjamin</p>
+  <i class="fa fa-home"></i>
+</footer>

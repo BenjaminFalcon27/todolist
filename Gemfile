@@ -21,6 +21,8 @@ gem "importmap-rails"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+gem 'font-awesome-rails'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
