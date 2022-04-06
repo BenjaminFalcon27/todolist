@@ -9,3 +9,17 @@ development:
   reconnect: true  # not default
   encoding:  utf8mb4
   collation: utf8mb4_0900_ai_ci
+
+production:
+  adapter:   mysql2
+  host:      spryrr1myu6oalwl.chr7pe7iynqr.eu-west-1.rds.amazonaws.com
+  username:  mwzvzf4az4hjvsvb
+  password:  v53l8eocdq0tt8d8
+  database:  t6rmzbtejrelxs2s
+  pool:      10    # not default (default is 5)
+  timeout:   20000 # not default (default is 5000 = 5sec)
+  reconnect: true  # not default
+  encoding:  utf8mb4
+  collation: utf8mb4_0900_ai_ci
+
+
