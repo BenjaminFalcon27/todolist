@@ -11,18 +11,17 @@
         <a class="list_title" href="<%= todo_list_path(todo_list) %>">
           <%= todo_list.title %>
         </a>
-
-        <div class="edit_list">
-          <%= link_to "Edit", edit_todo_list_path(todo_list) %>
-        </div>
-
+        <a class="edit_list" href="<%=edit_todo_list_path(todo_list) %>">
+          <div>
+            <i class="fa fa-edit"></i>
+          </div>
+        </a>
         <div class="delete">
           <%= button_to "Delete", todo_list_path(todo_list), method: :delete %>
         </div>
       </div>
     <% end %>
   </div>
-
   <a class="new_list" href="<%=new_todo_list_path %>">
     <span class="create_list">
       New
@@ -34,5 +33,7 @@
 <footer>
   <p class="copyright">@Copyright Trolais Benjamin</p>
   <i class="fa fa-home"></i>
+
 </footer>
+
 

@@ -36,11 +36,12 @@
  }
 
  article {
-    color: black;
+    color: red;
     background-color: #B8CBD0;
     height: 500px;
     margin-top: -2px;
  }
+
 
 .article {
     position:relative;
@@ -71,6 +72,7 @@
     background-color: #344D59;
     height: 50px;
     margin-top: 0;
+    padding: 20px;
  }
 
  .create_list {
@@ -109,12 +111,13 @@
 
 
  .edit_list{
-    padding: 4px 12px;
+    padding: 2px 12px;
     border: 1px solid black;
     text-decoration: none;
-    width: 30px;
+    width: 15px;
     background-color: gold;
     float:right;
+    font-size: 18px;
  }
 
 .edit_list:hover{
