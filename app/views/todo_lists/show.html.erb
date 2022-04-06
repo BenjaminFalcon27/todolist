@@ -1,11 +1,15 @@
 <div><%= notice %></div>
 
-<header class="header_show">
-  <%= render @todo_list %>
+<header class="header">
 
-  <div class="back_list">
-    <%= link_to "Back", todo_lists_path %>
-  </div>
+  <a class="back_new" href="<%= todo_lists_path %>">
+    <i class="fa fa-reply"></i>
+  </a>
+
+  <h1>
+    <%= render @todo_list %>
+  </h1>
+
 
 </header>
 
