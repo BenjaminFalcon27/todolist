@@ -1,0 +1,15 @@
+<h1 class="header_list_x">Title : <%= todo_list.title %></h1>
+
+  <div class="todo_lists">
+    <% todo_list.entries.each do |entry| %>
+      <div class=list_list>
+        <a class="list_title">
+          <%= entry.name %>
+        </a>
+
+      </div>
+    <% end %>
+  </div>
+  <a class="new_list" href="<%=new_todo_list_url%>">
+      <i class="fa fa-plus"></i>
+  </a>

@@ -6,21 +6,48 @@
     <i class="fa fa-reply"></i>
   </a>
 
-  <h1>
-    <%= render @todo_list %>
+  <h1 class="header_list_x">
+    Title : <%= @todo_list.title %>
   </h1>
 
 
 </header>
 
 
+<article class="article_show">
+  <div class="show_list">
+    <div class="todo_lists">
+      <%compt_total = 0%>
+      <%compt_checked = 0%>
+        <% @todo_list.entries.each do |entry| %>
+        <a href="<%= "/todo_lists/#{@todo_list.id}/entries/#{entry.id}/toggle" %>">
+          <div class=list_list>
+            <%if entry.done == false%>
+              <i class="fa fa-square-o"></i>
+            <%else%>
+              <i class="fa fa-check-square-o"></i>
+              <%compt_checked = compt_checked+1%>
+            <%end%>
+            <%=compt_total= compt_total+1%>
+            <a class="list_title">
+              <%= entry.name %>
+            </a>
+            <a class="edit_list" href="<%="/todo_lists/#{@todo_list.id}/entries/#{entry.id}/edit"%>">
+            <div>
+            <i class="fa fa-edit"></i>
+            </div>
+            </a>
+          <div class="delete">
+            <%= button_to "Delete", todo_list_entry_path(@todo_list,entry), method: :delete %>
+          </div>
+          </div>
+        </a>
+      <% end %>
+      <a class="task_done"><%=compt_checked%>/<%=compt_total%> task done</a>
 
-<div class="show_list">
-
-</div>
-
-<footer>
-  <p class="copyright">@Copyright Trolais Benjamin</p>
-  <i class="fa fa-home"></i>
-
-</footer>
+    </div>
+  </div>
+  <a class="create_entry" href="<%="/todo_lists/#{@todo_list.id}/entries/new"%>">
+    <i class="fa fa-plus"></i>
+  </a>
+</article>

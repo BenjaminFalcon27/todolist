@@ -1,5 +1,5 @@
 class TodoListsController < ApplicationController
-  before_action :set_todo_list, only: %i[ show edit update destroy ]
+  before_action :find_todo_list, only: %i[ show edit update destroy ]
 
   # GET /todo_lists
   def index
@@ -46,14 +46,15 @@ class TodoListsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_todo_list
-      id = params[:id]
-      @todo_list = TodoList.find(id)
-    end
 
-    # Only allow a list of trusted parameters through.
-    def todo_list_params
-      params.require(:todo_list).permit(:title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def find_todo_list
+    id = params[:id]
+    @todo_list = TodoList.find(id)
+  end
+
+  # Only allow a list of trusted parameters through.
+  def todo_list_params
+    params.require(:todo_list).permit(:title)
+  end
 end

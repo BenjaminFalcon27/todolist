@@ -1,0 +1,10 @@
+<header class="header_new_entry">
+  <a class="back_new" href="<%="/todo_lists/#{@todo_list.id}" %>">
+    <i class="fa fa-reply"></i>
+  </a>
+  <h1>New entry</h1>
+</header>
+
+<article class="article_create">
+  <%= render "form", entry: @entry %>
+</article>

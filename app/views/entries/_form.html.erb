@@ -1,0 +1,26 @@
+<%= form_with(model: [entry.todo_list, entry]) do |form| %>
+  <% if entry.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+        <% entry.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form">
+    <a class="title_form">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name %>
+      <%= form.hidden_field :todo_list_id %>
+      <%= form.hidden_field :done %>
+
+      <%= form.submit style: "display: block"%>
+    </a>
+  </div>
+
+
+<% end %>

@@ -1,0 +1,10 @@
+<header class="header_edit_list">
+  <a class="back_new" href="<%="/todo_lists/#{@todo_list.id}" %>">
+    <i class="fa fa-reply"></i>
+  </a>
+  <h1>Edit entry</h1>
+</header>
+
+<article class="article_edit">
+  <%= render "form", entry: @entry %>
+</article>

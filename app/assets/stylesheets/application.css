@@ -14,25 +14,87 @@
  *= require font-awesome
  *= require_self
  */
+.task_done {
+  font-size: 50px;
+  color : white;
+  float: right;
+  margin-right: 10px;
+  margin-top: -300px;
 
+
+}
 
  .header {
     color: white;
     background-color: #137C8B;
     padding: 10px 16px;
-    transition: all .4s ease-in-out;
     margin: 0px;
     margin-bottom: -10px;
+    height: 50px;
 
  }
 
+ .header_new_list {
+    height: 70px;
+    color: white;
+    background-color: #137C8B;
+    padding: 10px 16px;
+    margin: 0px;
+    margin-bottom: -10px;
+
+
+ }
+
+  .header_edit_list {
+    height: 70px;
+    color: white;
+    background-color: #137C8B;
+    padding: 10px 16px;
+    margin: 0px;
+    margin-bottom: -10px;
+
+
+ }
+
+   .header_list_x {
+    height: 70px;
+    color: white;
+    background-color: #137C8B;
+    padding: 10px 16px;
+    margin: 0px;
+    margin-bottom: -10px;
+
+
+ }
+
+.header_new_entry {
+  height: 70px;
+  color: white;
+  background-color: #137C8B;
+  padding: 10px 16px;
+  margin: 0px;
+  margin-bottom: -10px;
+}
+
  body {
      margin: auto;
+     margin-top: 100px;
      padding: 0;
      width: 1000px;
      border-style: solid;
      border-radius: 2px;
      border-color: #344D59;
+     text-decoration: none;
+     font-family: "Gill Sans", sans-serif;
+ }
+
+ a {
+   text-decoration: none;
+   color : black;
+ }
+
+ a:hover{
+  text-decoration: :bold;
  }
 
  article {
@@ -67,6 +129,14 @@
 
 
 }
+
+.article_show{
+    color: black;
+    background-color: #B8CBD0;
+    height: 500px;
+    position:relative;
+}
+
  footer {
     color :white;
     background-color: #344D59;
@@ -86,9 +156,6 @@
     background-color: #137C8B;
     position: absolute;
  }
- .create_list:hover {
-    background-color: red;
- }
 
  .todo_lists #show{
     margin-left: 15px;
@@ -99,15 +166,27 @@
     width: 40px;
 
  }
- .todo_lists #show:hover{
-     background-color: gold;
- }
-
  .show_list{
     height: 200px;
     background-color: #B8CBD0;
 
  }
+
+  .create_entry {
+    color : gold;
+    bottom: 10px;
+    right: 10px;
+    padding: 4px 12px;
+    background-color: white;
+    border: 1px solid black;
+    text-decoration: none;
+    background-color: #137C8B;
+    position: absolute;
+  }
+
+  .create_entry:hover{
+    font-size: 24px;
+}
 
 
  .edit_list{
@@ -115,13 +194,14 @@
     border: 1px solid black;
     text-decoration: none;
     width: 15px;
-    background-color: gold;
+    background-color: #137C8B;
     float:right;
     font-size: 18px;
  }
 
 .edit_list:hover{
-    background-color: red;
+    font-size: 20px;
+
 }
 footer p {
     position : relative;
@@ -154,9 +234,7 @@ footer p {
     width: 30px;
     background-color: #137C8B;
 }
-.show_show:hover{
-    background-color: gold;
-}
+
 
 
 .delete{
@@ -173,13 +251,12 @@ footer p {
 .list_list{
     padding:20px;
     border-bottom: 1px solid black;
-
-
+    text-decoration: none;
 
 }
 
 .list_list:hover{
-    background-color: gold;
+    background-color:#7A90A4;
 }
 
 .back_list{
@@ -187,25 +264,11 @@ footer p {
     margin-right: 20px;
     margin-top: -20px;
     border: 1px solid black;
-    background-color: gold;
     font-size: 24px;
 
 }
 
 .back_list:hover{
-    background-color: red;
-}
-
-.show{
-
-    float: right;
-    margin-right: 20px;
-    margin-top: -20px;
-    border: 1px solid black;
-    background-color: gold;
-}
-
-.show:hover{
     background-color: red;
 }
 
@@ -273,25 +336,31 @@ footer p {
 }
 
 .form {
-    border: 2px solid black;
+    border: 5px solid black;
     font-size: 20px;
-    padding: 50px;
+    padding: 20px;
     border-color: #344D59;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
 
+}
+
+.form:hover{
+  padding: 30px;
 }
 
 
 .title_form {
     font-size: 40px;
-    padding: 10px;
     font-weight: bold;
     font-style: normal;
+    color:#137C8B;
 
 }
 
 input[type=submit] {
   width: 150px;
-  padding: 10px;
 }
 
 select {
