@@ -8,6 +8,9 @@
 
   <h1 class="header_list_x">
     Title : <%= @todo_list.title %>
+    <a class=header_list_x_part2>
+      <%=@todo_list.entries.where(done: true).count%> / <%=@todo_list.entries.count%> task done
+    </a>
   </h1>
 
 
@@ -17,8 +20,6 @@
 <article class="article_show">
   <div class="show_list">
     <div class="todo_lists">
-      <%compt_total = 0%>
-      <%compt_checked = 0%>
         <% @todo_list.entries.each do |entry| %>
         <a href="<%= "/todo_lists/#{@todo_list.id}/entries/#{entry.id}/toggle" %>">
           <div class=list_list>
@@ -26,9 +27,7 @@
               <i class="fa fa-square-o"></i>
             <%else%>
               <i class="fa fa-check-square-o"></i>
-              <%compt_checked = compt_checked+1%>
             <%end%>
-            <%=compt_total= compt_total+1%>
             <a class="list_title">
               <%= entry.name %>
             </a>
@@ -43,8 +42,6 @@
           </div>
         </a>
       <% end %>
-      <a class="task_done"><%=compt_checked%>/<%=compt_total%> task done</a>
-
     </div>
   </div>
   <a class="create_entry" href="<%="/todo_lists/#{@todo_list.id}/entries/new"%>">

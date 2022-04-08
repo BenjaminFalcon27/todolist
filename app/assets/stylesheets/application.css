@@ -67,6 +67,15 @@
 
  }
 
+
+  .header_list_x_part2 {
+    font-size: 24px;
+    color: lightgrey;
+    float: right;
+
+
+ }
+
 .header_new_entry {
   height: 70px;
   color: white;
@@ -291,6 +300,14 @@ footer p {
     padding: 10px;
     height: 15px;
 
+    }
+
+.list_title_part2 {
+
+    padding: 10px;
+    height: 15px;
+    margin-left: 20px;
+    color: #137C8B;
     }
 
 .new_list {

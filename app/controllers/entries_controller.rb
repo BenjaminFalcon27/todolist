@@ -55,7 +55,7 @@ class EntriesController < ApplicationController
   end
 
   def count_checked
-    @todo_list.count(:entries)
+    @todo_list.entries.count.where(done: true)
   end
 
   def count_unchecked

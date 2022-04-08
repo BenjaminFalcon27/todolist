@@ -11,6 +11,9 @@
         <a class="list_title" href="<%= todo_list_path(todo_list) %>">
           <%= todo_list.title %>
         </a>
+        <a class="list_title_part2">
+          <%=todo_list.entries.where(done: true).count%> / <%=todo_list.entries.count%> task done
+        </a>
         <a class="edit_list" href="<%=edit_todo_list_path(todo_list) %>">
           <div>
             <i class="fa fa-edit"></i>
