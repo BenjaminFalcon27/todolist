@@ -9,7 +9,7 @@
   <h1 class="header_list_x">
     Title : <%= @todo_list.title %>
     <a class=header_list_x_part2>
-      <%=@todo_list.entries.where(done: true).count%> / <%=@todo_list.entries.count%> task done
+      <%= @todo_list.completion_text %>
     </a>
   </h1>
 

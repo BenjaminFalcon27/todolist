@@ -16,5 +16,5 @@ class Entry < ApplicationRecord
 
   # Validations
 
-  validates :done, :inclusion => [true, false]
+  validates :done, :inclusion  => [true, false]
 end

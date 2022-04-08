@@ -79,8 +79,4 @@ class EntriesController < ApplicationController
   def entry_params
     params.require(:entry).permit(:id, :name, :todo_list_id, :done)
   end
-
-
-
-
 end
