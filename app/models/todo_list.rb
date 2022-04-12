@@ -1,5 +1,5 @@
 class TodoList < ApplicationRecord
-  has_many :entries
+  has_many :entries, :dependent => :destroy
 
   def completion_text
     if entries.where(done: true).count>1

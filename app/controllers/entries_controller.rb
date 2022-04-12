@@ -51,7 +51,7 @@ class EntriesController < ApplicationController
     # DELETE /entry/1
   def destroy
     @entry.destroy
-    redirect_to @todo_list, notice: "entry was successfully destroyed."
+    render :json => { :success => true }
   end
 
   def count_checked

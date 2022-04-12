@@ -3,7 +3,10 @@ class TodoListsController < ApplicationController
 
   # GET /todo_lists
   def index
-    @todo_lists = TodoList.all
+    @todo_lists = TodoList.where(
+      "title LIKE ?",
+      "%#{params[:search_by_title]}%"
+    )
   end
 
   # GET /todo_lists/1

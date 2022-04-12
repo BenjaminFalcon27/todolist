@@ -5,7 +5,20 @@
 <h1 class="header">My List Page</h1>
 
 <article class="article">
+  <div class="search_bar">
+    <%= form_tag "/todo_lists", method: "GET" do %>
+      <%= label_tag :search_by_title %>
+      <%= text_field_tag :search_by_title, params[:search_by_title] %>
+      <%= submit_tag "Search" %>
+      <a href="/"><i class="fa fa-times"></i></a>
+
+    <% end %>
+  </div>
   <div class="todo_lists">
+    <% if @todo_lists.none? %>
+      <p class="not_found">List not found . . .</p>
+    <% end %>
+
     <% @todo_lists.each do |todo_list| %>
       <div class=list_list>
         <a class="list_title" href="<%= todo_list_path(todo_list) %>">
@@ -19,7 +32,7 @@
             <i class="fa fa-edit"></i>
           </div>
         </a>
-        <div class="delete">
+        <div class="delete_todo_list">
           <%= button_to "Delete", todo_list_path(todo_list), method: :delete %>
         </div>
       </div>

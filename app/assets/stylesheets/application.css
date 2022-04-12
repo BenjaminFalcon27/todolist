@@ -154,7 +154,7 @@ footer {
   position: absolute;
  }
 
-.todo_lists #show{
+.todo_list #show{
   margin-left: 15px;
   padding: 4px 10px;
   background-color: #137C8B;
@@ -230,8 +230,34 @@ footer p {
 .delete{
   float: right;
   padding: 2px 12px;
-  width: 30px;
   margin-right: 20px;
+  border: 1px solid black;
+  text-decoration: none;
+  width: 15px;
+  background-color: #137C8B;
+  font-size: 18px;
+
+}
+.delete:hover{
+  font-size: 20px;
+
+}
+
+.delete_todo_list{
+  float: right;
+  padding: 2px 12px;
+  margin-right: 40px;
+  text-decoration: none;
+  width: 15px;
+  font-size: 18px;
+
+}
+
+.not_found{
+  margin-left: 15px;
+  padding: 4px 10px;
+  color: #137C8B;
+  text-decoration: none;
 }
 
 .list_list{
@@ -242,6 +268,25 @@ footer p {
 
 .list_list:hover{
     background-color:#7A90A4;
+}
+
+.search_bar{
+  padding:20px;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  color:#137C8B;
+  font-size: 24px;
+
+}
+
+.search_entry{
+  padding:10px;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  color:#137C8B;
+  font-size: 20px;
+  padding-top: 5px;
+
 }
 
 .back_list{
@@ -331,7 +376,7 @@ footer p {
 }
 
 .form:hover{
-  padding: 30px;
+  background-color:#7A90A4;
 }
 
 .title_form {
