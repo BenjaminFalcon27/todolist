@@ -1,5 +1,4 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "controllers"
+import './components/app';
 
 jQuery.each( [ "put", "delete" ], function( i, method ) {
   jQuery[ method ] = function( url, data, callback, type ) {
