@@ -2,7 +2,7 @@
   <%= notice %>
 </div>
 
-<h1 class="header">My List Page</h1>
+<header id="header"></header>
 
 <article class="article">
   <div class="search_bar">
@@ -14,6 +14,10 @@
 
     <% end %>
   </div>
+  <div class="react_content" id="root">
+
+  </div>
+  <!--
   <div class="todo_lists">
     <% if @todo_lists.none? %>
       <p class="not_found">List not found . . .</p>
@@ -41,6 +45,7 @@
   <a class="new_list" href="<%=new_todo_list_path %>">
       <i class="fa fa-plus"></i>
   </a>
+  -->
 </article>
 
 
