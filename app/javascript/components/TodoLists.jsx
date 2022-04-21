@@ -13,7 +13,7 @@ class TodoLists extends React.Component {
   }
 
   // ADD LIST FUNCTION
-  handleAdd = () => {
+  reloadTodoLists = () => {
     $.get("todo_lists.json", (response) =>
       this.setState({ todoLists: response })
     );
@@ -49,27 +49,27 @@ class TodoLists extends React.Component {
   }
 
   renderForm() {
-    return <AddTodoList onTodoListAdd={this.handleAdd} />;
+    return <AddTodoList onTodoListAdd={this.reloadTodoLists} />;
   }
 
   renderJson = (todoList) => {
-    const queue = "0/0 done";
-    $.get("todo_lists.json", (response) =>
-      $.each(response, function (i) {
-        const id = response[i].id;
-        const title = response[i].title;
-        console.log(response[i].title);
-        console.log(response[i].id);
-        this.state.setState({ id, title, queue });
-      })
-    );
+    // const queue = "0/0 done";
+    // $.get("todo_lists.json", (response) =>
+    //   $.each(response, function (i) {
+    //     const id = response[i].id;
+    //     const title = response[i].title;
+    //     console.log(response[i].title);
+    //     console.log(response[i].id);
+    //     this.state.setState({ id, title, queue });
+    //   })
+    // );
   };
 
   render() {
     return (
       <div className="todo_lists">
         {this.renderTodoLists()}
-        {this.handleAdd()}
+        {this.renderForm()}
         {this.renderForm()}
       </div>
     );
