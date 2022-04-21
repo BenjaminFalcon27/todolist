@@ -7,6 +7,11 @@ class TodoListsController < ApplicationController
       "title LIKE ?",
       "%#{params[:search_by_title]}%"
     )
+
+    respond_to do |format|
+      format.html  # index.html.erb
+      format.json  { render :json => @todo_lists }
+    end
   end
 
   # GET /todo_lists/1

@@ -19,7 +19,7 @@ class AddTodoList extends Component {
     // SETTERS
     const id = new Date().getTime();
     const title = this.state.newTodoList;
-    const queue = "2/2 done";
+    const queue = "0/0 done";
     this.props.onTodoListAdd({ id, title, queue });
     this.setState({ newTodoList: "" });
   };
