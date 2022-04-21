@@ -5,26 +5,22 @@ import AddTodoList from "./AddTodoList";
 
 class TodoLists extends React.Component {
   // STATE
-  state = {
-    todoLists: [
-      { id: 1, title: "Todolist1", queue: "2/2 done" },
-      { id: 2, title: "Todolist2", queue: "2/7 done" },
-      { id: 3, title: "Todolist3", queue: "0/2 done" },
-      { id: 4, title: "Todolist4", queue: "3/4 done" },
-      { id: 5, title: "Todolist5", queue: "1/2 done" },
-      { id: 6, title: "Todolist6", queue: "1/4 done" },
-    ],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      todoLists: [],
+    };
+  }
 
   // ADD LIST FUNCTION
-  handleAdd = (todoList) => {
+  handleAdd = () => {
     $.get("todo_lists.json", (response) =>
       this.setState({ todoLists: response })
     );
 
-    //const todoLists = this.state.todoLists.slice();
-    //todoLists.push(todoList);
-    //this.setState({ todoLists });
+    // const todoLists = this.state.todoLists.slice();
+    // todoLists.push(todoList);
+    // this.setState({ todoLists });
   };
 
   // DELETE FUNCTION
@@ -40,32 +36,40 @@ class TodoLists extends React.Component {
     this.setState({ todoLists });
   };
 
-  //   renderTodoLists() {
-  //     // ARRAY OF LISTS
-  //     return this.state.todoLists.map((todoList) => (
-  //       <TodoList
-  //         //SEND KEY/DETAILS/FUNCTION TO THE CLASS TodoList
-  //         key={todoList.id}
-  //         details={todoList}
-  //         onDelete={this.deleteTodoList}
-  //       />
-  //     ));
-  //   }
-
-  renderTodoLists = (todoList) => {
-    $.get("todo_lists.json", (response) =>
-      this.setState({ todoLists: response })
-    );
-  };
+  renderTodoLists() {
+    // ARRAY OF LISTS
+    return this.state.todoLists.map((todoList) => (
+      <TodoList
+        //SEND KEY/DETAILS/FUNCTION TO THE CLASS TodoList
+        key={todoList.id}
+        details={todoList}
+        onDelete={this.deleteTodoList}
+      />
+    ));
+  }
 
   renderForm() {
     return <AddTodoList onTodoListAdd={this.handleAdd} />;
   }
 
+  renderJson = (todoList) => {
+    const queue = "0/0 done";
+    $.get("todo_lists.json", (response) =>
+      $.each(response, function (i) {
+        const id = response[i].id;
+        const title = response[i].title;
+        console.log(response[i].title);
+        console.log(response[i].id);
+        this.state.setState({ id, title, queue });
+      })
+    );
+  };
+
   render() {
     return (
       <div className="todo_lists">
         {this.renderTodoLists()}
+        {this.handleAdd()}
         {this.renderForm()}
       </div>
     );
