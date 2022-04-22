@@ -35,15 +35,18 @@ class TodoLists extends React.Component {
     const listId = id;
     console.log(listId);
 
-    $.delete(`/todo_lists/${listId}.json`, (data) => {
-      try {
-        console.log("Success");
-        // DELETE THE TODOLIST BY INDEX
-        todoLists.splice(i, 1);
-        // UPDATE STATE
-        this.setState({ todoLists });
-      } catch (error) {
-        console.log(error);
+    $.delete(`/todo_lists/${listId}.json`, (response) => {
+      console.log(response);
+      if (response) {
+        // console.log("Success");
+        // // DELETE THE TODOLIST BY INDEX
+        // todoLists.splice(i, 1);
+        // // UPDATE STATE
+        // this.setState({ todoLists });
+        this.reloadTodoLists();
+        console.log("succesfully deleted (Front)");
+      } else {
+        console.log("Error");
       }
     });
   }

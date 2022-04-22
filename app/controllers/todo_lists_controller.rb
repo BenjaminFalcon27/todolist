@@ -45,15 +45,24 @@ class TodoListsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-  end
+  end 
 
   # DELETE /todo_lists/1
   def destroy
-    @todo_list.destroy
-
-    
+    @todo_list.destroy   
+    @todo_lists = TodoList.where(
+      "title LIKE ?",
+      "%#{params[:search_by_title]}%"
+    ) 
     respond_to do |format|
-      format.json  { render :json => @todo_lists }
+      # Si requête html
+      format.html do 
+        redirect_to todo_lists_path, notice:"Todo list was successfuly destroyed" 
+      end
+      # Si requête json
+      format.json do
+        render :json => @todo_lists
+      end
     end
   end
 
