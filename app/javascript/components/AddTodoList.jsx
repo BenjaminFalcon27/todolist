@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 class AddTodoList extends Component {
+  // STATE
   state = {
     newTodoList: "",
   };

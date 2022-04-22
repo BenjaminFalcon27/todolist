@@ -10,7 +10,7 @@ class TodoLists extends React.Component {
     this.state = {
       todoLists: [],
     };
-
+    // SHOW LIST 1st LOAD
     this.reloadTodoLists();
   }
 
@@ -19,10 +19,6 @@ class TodoLists extends React.Component {
     $.get("todo_lists.json", (response) =>
       this.setState({ todoLists: response })
     );
-
-    // const todoLists = this.state.todoLists.slice();
-    // todoLists.push(todoList);
-    // this.setState({ todoLists });
   }
 
   // DELETE FUNCTION
@@ -30,12 +26,26 @@ class TodoLists extends React.Component {
     // STATE COPY
     const todoLists = this.state.todoLists.slice();
 
+    //FRONT PART
     // FIND TODOLIST BY ID
     const i = todoLists.findIndex((todoList) => todoList.id === id);
-    // DELETE THE TODOLIST BY INDEX
-    todoLists.splice(i, 1);
-    // UPDATE STATE
-    this.setState({ todoLists });
+    console.log(i);
+
+    //BACK PART
+    const listId = id;
+    console.log(listId);
+
+    $.delete(`/todo_lists/${listId}.json`, (data) => {
+      try {
+        console.log("Success");
+        // DELETE THE TODOLIST BY INDEX
+        todoLists.splice(i, 1);
+        // UPDATE STATE
+        this.setState({ todoLists });
+      } catch (error) {
+        console.log(error);
+      }
+    });
   }
 
   renderTodoLists() {
