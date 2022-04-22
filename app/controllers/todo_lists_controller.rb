@@ -28,8 +28,10 @@ class TodoListsController < ApplicationController
   end
 
   # POST /todo_lists
-  def create
+  def create 
+    
     @todo_list = TodoList.new(todo_list_params)
+
 
     if @todo_list.save
       redirect_to @todo_list, notice: "Todo list was successfully created."

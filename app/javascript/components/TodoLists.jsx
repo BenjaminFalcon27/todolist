@@ -23,19 +23,7 @@ class TodoLists extends React.Component {
 
   // DELETE FUNCTION
   deleteTodoList(id) {
-    // STATE COPY
-    const todoLists = this.state.todoLists.slice();
-
-    //FRONT PART
-    // FIND TODOLIST BY ID
-    const i = todoLists.findIndex((todoList) => todoList.id === id);
-    console.log(i);
-
-    //BACK PART
-    const listId = id;
-    console.log(listId);
-
-    $.delete(`/todo_lists/${listId}.json`, (response) => {
+    $.delete(`/todo_lists/${id}.json`, (response) => {
       console.log(response);
       if (response) {
         // console.log("Success");

@@ -18,10 +18,11 @@ class AddTodoList extends Component {
     event.preventDefault();
 
     // SETTERS
-    const id = new Date().getTime();
+    // const id = new Date().getTime();
     const title = this.state.newTodoList;
-    const queue = "2/2 done";
-    this.props.onTodoListAdd({ id, title, queue });
+    $.post("/todo_lists");
+    // const queue = "2/2 done";
+    // this.props.onTodoListAdd({ title });
     this.setState({ newTodoList: "" });
   };
 
@@ -33,7 +34,7 @@ class AddTodoList extends Component {
           placeholder="add a list"
           onChange={this.handleChange}
         ></input>
-        <button>Add</button>
+        <button type="submit">Add</button>
       </form>
     );
   }
