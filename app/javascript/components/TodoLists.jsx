@@ -10,10 +10,12 @@ class TodoLists extends React.Component {
     this.state = {
       todoLists: [],
     };
+
+    this.reloadTodoLists();
   }
 
   // ADD LIST FUNCTION
-  reloadTodoLists = () => {
+  reloadTodoLists() {
     $.get("todo_lists.json", (response) =>
       this.setState({ todoLists: response })
     );
@@ -21,10 +23,10 @@ class TodoLists extends React.Component {
     // const todoLists = this.state.todoLists.slice();
     // todoLists.push(todoList);
     // this.setState({ todoLists });
-  };
+  }
 
   // DELETE FUNCTION
-  deleteTodoList = (id) => {
+  deleteTodoList(id) {
     // STATE COPY
     const todoLists = this.state.todoLists.slice();
 
@@ -34,7 +36,7 @@ class TodoLists extends React.Component {
     todoLists.splice(i, 1);
     // UPDATE STATE
     this.setState({ todoLists });
-  };
+  }
 
   renderTodoLists() {
     // ARRAY OF LISTS
@@ -42,8 +44,8 @@ class TodoLists extends React.Component {
       <TodoList
         //SEND KEY/DETAILS/FUNCTION TO THE CLASS TodoList
         key={todoList.id}
-        details={todoList}
-        onDelete={this.deleteTodoList}
+        todoList={todoList}
+        onDelete={this.deleteTodoList.bind(this)}
       />
     ));
   }
@@ -52,24 +54,10 @@ class TodoLists extends React.Component {
     return <AddTodoList onTodoListAdd={this.reloadTodoLists} />;
   }
 
-  renderJson = (todoList) => {
-    // const queue = "0/0 done";
-    // $.get("todo_lists.json", (response) =>
-    //   $.each(response, function (i) {
-    //     const id = response[i].id;
-    //     const title = response[i].title;
-    //     console.log(response[i].title);
-    //     console.log(response[i].id);
-    //     this.state.setState({ id, title, queue });
-    //   })
-    // );
-  };
-
   render() {
     return (
       <div className="todo_lists">
         {this.renderTodoLists()}
-        {this.renderForm()}
         {this.renderForm()}
       </div>
     );
