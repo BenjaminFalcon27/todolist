@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 
 class AddTodoList extends Component {
-  // STATE
-  state = {
-    newTodoList: "",
-  };
+  constructor(props) {
+    super(props);
+
+    // STATE
+    this.state = {
+      newTodoList: "",
+    };
+  }
 
   handleChange = (event) => {
     // INPUT VALUE
@@ -16,19 +20,29 @@ class AddTodoList extends Component {
   // WHEN INPUT IS USED
   handleSubmit = (event) => {
     event.preventDefault();
-
     // SETTERS
-    // const id = new Date().getTime();
     const title = this.state.newTodoList;
-    $.post("/todo_lists");
-    // const queue = "2/2 done";
-    // this.props.onTodoListAdd({ title });
+    // Tab
+    let newTodoList = {
+      todo_list: { title },
+    };
+    // POST TO todo_lists_controller, SEND PARAM newTodoList, GET RESPONSE response
+    $.post("todo_lists.json", newTodoList, (response) => {
+      if (response) {
+        console.log(response);
+        // RELOAD PAGE
+        this.props.onTodoListAdd();
+      } else {
+        console.log("error handleSubmit");
+      }
+    });
+    // SETSTATE EMPTY AFTER CREATE
     this.setState({ newTodoList: "" });
   };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="form_add" onSubmit={this.handleSubmit}>
         <input
           value={this.state.newTodoList}
           placeholder="add a list"

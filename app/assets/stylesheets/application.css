@@ -99,8 +99,8 @@ a:hover{
 article {
   color: red;
   background-color: #B8CBD0;
-  height: 500px;
   margin-top: -2px;
+  padding-bottom: 25px;
 }
 
 .article {
@@ -400,6 +400,12 @@ select {
   margin-right: 10px;
   margin-top: -300px;
 }
+
+.form_add {
+  padding : 5px;
+}
+
+
 
 
 

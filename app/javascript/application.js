@@ -27,6 +27,8 @@ $(function(){
 
 
 
+
+
   // delete entries 'by click' function
 $("#todo_lists-show .delete_entry").click(function(){
   const todoListId = $('.todo_list').data('id')
@@ -70,6 +72,8 @@ $(document).ready(function(){
 
 
   });
+
+  
 });
 
 

@@ -12,5 +12,5 @@ class TodoList < ApplicationRecord
     # "#{done_count} / #{entries.count} #{'task'.pluralize(done_count)} done"
   end
 
-  validates :title, :uniqueness => true
+  validates :title, :uniqueness => true, :presence => true
 end

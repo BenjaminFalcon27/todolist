@@ -28,13 +28,20 @@ class TodoListsController < ApplicationController
   end
 
   # POST /todo_lists
-  def create 
-    
+  def create
     @todo_list = TodoList.new(todo_list_params)
-
-
     if @todo_list.save
-      redirect_to @todo_list, notice: "Todo list was successfully created."
+      respond_to do |format|
+        # IF HTML REQUEST
+        format.html do 
+          redirect_to @todo_list, notice:"Todo list was successfuly created" 
+        end
+        # IF JSON REQUEST
+        format.json do
+          # SEND THE NEW TODOLIST IN JSON FORMAT
+          render :json => @todo_list
+        end
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -43,7 +50,17 @@ class TodoListsController < ApplicationController
   # PATCH/PUT /todo_lists/1
   def update
     if @todo_list.update(todo_list_params)
-      redirect_to @todo_list, notice: "Todo list was successfully updated."
+      respond_to do |format|
+        # IF HTML REQUEST
+        format.html do 
+          redirect_to @todo_list, notice:"Todo list was successfuly updated" 
+        end
+        # IF JSON REQUEST
+        format.json do
+          # SEND THE NEW TODOLIST IN JSON FORMAT
+          render :json => @todo_list
+        end
+      end
     else
       render :edit, status: :unprocessable_entity
     end
@@ -57,11 +74,11 @@ class TodoListsController < ApplicationController
       "%#{params[:search_by_title]}%"
     ) 
     respond_to do |format|
-      # Si requête html
+      # IF HTML REQUEST
       format.html do 
         redirect_to todo_lists_path, notice:"Todo list was successfuly destroyed" 
       end
-      # Si requête json
+      # IF JSON REQUEST
       format.json do
         render :json => @todo_lists
       end
