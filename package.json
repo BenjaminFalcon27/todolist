@@ -4,8 +4,9 @@
   "dependencies": {
     "esbuild": "^0.14.36",
     "react": "^17.0.0",
+    "react_ujs": "^2.6.2",
     "react-dom": "^17.0.0",
-    "react_ujs": "^2.6.2"
+    "react-icons": "^4.3.1"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --loader:.js=jsx --outdir=app/assets/builds"

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-//import EditInput from "./EditInput";
 import ReactDOM from "react-dom";
+import { AiFillEdit } from "react-icons/ai";
+import { AiFillSave } from "react-icons/ai";
+import { AiFillDelete } from "react-icons/ai";
 
 class TodoList extends Component {
   // TODOLIST CONSTRUCTOR
@@ -10,9 +12,11 @@ class TodoList extends Component {
     this.state = {
       inputTitle: "",
       editMode: false,
+      searchValue: "",
     };
   }
 
+  // INPUT CHANGE EVENT FUNCTION
   handleChange = (event) => {
     // INPUT VALUE
     const value = event.currentTarget.value;
@@ -20,6 +24,7 @@ class TodoList extends Component {
     this.setState({ inputTitle: value });
   };
 
+  //EDIT MODE TO HIDE INPUT AND SAVE
   enableEditMode() {
     this.setState({
       inputTitle: this.props.todoList.title,
@@ -54,39 +59,47 @@ class TodoList extends Component {
     );
   }
 
+  handleSearch() {
+    const value = document.getElementById("research").value;
+    this.setState({ searchValue: value });
+  }
+
   render() {
     return (
       <div className="list_list">
         <a
           className="list_title"
           style={{ display: this.state.editMode ? "none" : "inline" }}
+          href={`/todo_lists/${this.props.todoList.id}`}
         >
           {this.props.todoList.title}
         </a>
-        <a className="list_title_part2">{this.props.todoList.queue}</a>
+
         <button
           className="delete_todo_list"
           onClick={() => this.props.onDelete(this.props.todoList.id)}
         >
-          X
+          <AiFillDelete />
         </button>
-        <button
-          className="edit_button"
-          onClick={this.enableEditMode.bind(this)}
-        >
-          Edit
-        </button>
-        <button className="edit_button" onClick={this.editTodoList.bind(this)}>
-          Save
-        </button>
+        <div className="edit_button">
+          <button onClick={this.enableEditMode.bind(this)}>
+            <AiFillEdit />
+          </button>
+        </div>
         <input
-          style={{ display: this.state.editMode ? "block" : "none" }}
+          style={{ display: this.state.editMode ? "inline" : "none" }}
           className="edit_input"
           placeholder="set a new title"
           value={this.state.inputTitle}
           onChange={this.handleChange}
           onSubmit={() => this.editTodoList(this.props.todoList.id)}
         ></input>
+        <button
+          onClick={this.editTodoList.bind(this)}
+          style={{ display: this.state.editMode ? "inline" : "none" }}
+        >
+          <AiFillSave />
+        </button>
       </div>
     );
   }

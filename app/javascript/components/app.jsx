@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import TodoLists from "./TodoLists";
+import SearchBar from "./SearchBar";
 
 // SET HEADER
 const header = <h1 className="header">My List Page</h1>;
