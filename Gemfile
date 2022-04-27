@@ -22,6 +22,8 @@ gem "bootsnap", require: false
 
 gem 'font-awesome-rails'
 
+gem 'translation'
+
 gem 'jsbundling-rails'
 
 # Use Sass to process CSS

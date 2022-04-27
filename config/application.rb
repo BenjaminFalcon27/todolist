@@ -6,10 +6,14 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module Todolist
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+
+    # translation.io
+    config.i18n.available_locales = [:en, :es, :nl, :de]
 
     # Configuration for the application, engines, and railties goes here.
     #
