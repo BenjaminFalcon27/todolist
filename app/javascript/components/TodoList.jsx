@@ -74,15 +74,24 @@ class TodoList extends Component {
         >
           {this.props.todoList.title}
         </a>
-
+        <a
+          className="list_title_part2"
+          style={{ display: this.state.editMode ? "none" : "inline" }}
+        >
+          {this.props.todoList.completion_text}
+        </a>
         <button
           className="delete_todo_list"
           onClick={() => this.props.onDelete(this.props.todoList.id)}
+          style={{ display: this.state.editMode ? "none" : "inline" }}
         >
           <AiFillDelete />
         </button>
         <div className="edit_button">
-          <button onClick={this.enableEditMode.bind(this)}>
+          <button
+            onClick={this.enableEditMode.bind(this)}
+            style={{ display: this.state.editMode ? "none" : "inline" }}
+          >
             <AiFillEdit />
           </button>
         </div>
@@ -94,12 +103,19 @@ class TodoList extends Component {
           onChange={this.handleChange}
           onSubmit={() => this.editTodoList(this.props.todoList.id)}
         ></input>
+
         <button
           onClick={this.editTodoList.bind(this)}
           style={{ display: this.state.editMode ? "inline" : "none" }}
         >
           <AiFillSave />
         </button>
+        <a
+          className="edit_input"
+          style={{ display: this.state.editMode ? "inline" : "none" }}
+        >
+          Save
+        </a>
       </div>
     );
   }

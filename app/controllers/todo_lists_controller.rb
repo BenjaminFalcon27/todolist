@@ -8,6 +8,16 @@ class TodoListsController < ApplicationController
       "%#{params[:search_by_title]}%"
     )
 
+    
+
+    @todo_lists = @todo_lists.collect do |todo_list|
+      {
+        :id              => todo_list.id,
+        :title           => todo_list.title,
+        :completion_text => todo_list.completion_text
+      }
+    end
+
     respond_to do |format|
       format.html  # index.html.erb
       format.json  { render :json => @todo_lists }

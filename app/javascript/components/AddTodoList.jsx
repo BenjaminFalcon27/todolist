@@ -42,7 +42,7 @@ class AddTodoList extends Component {
 
   render() {
     return (
-      <form className="form_add">
+      <form className="form_add" onSubmit={this.handleSubmit}>
         <input
           value={this.state.newTodoList}
           placeholder="add a list"
