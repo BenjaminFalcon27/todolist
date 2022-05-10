@@ -227,7 +227,7 @@ footer p {
   background-color: #137C8B;
 }
 
-.delete{
+.delete_entry{
   float: right;
   padding: 2px 12px;
   margin-right: 20px;
@@ -238,7 +238,7 @@ footer p {
   font-size: 18px;
 
 }
-.delete:hover{
+.delete_entry:hover{
   font-size: 20px;
 
 }
