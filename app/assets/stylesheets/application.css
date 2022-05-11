@@ -128,7 +128,6 @@ article {
 .article_show{
   color: black;
   background-color: #B8CBD0;
-  height: 500px;
   position:relative;
 }
 
@@ -164,7 +163,6 @@ footer {
  }
 
 .show_list{
-  height: 200px;
   background-color: #B8CBD0;
  }
 
