@@ -136,9 +136,8 @@ article {
 footer {
   color :white;
   background-color: #344D59;
-  height: 50px;
-  margin-top: 0;
-  padding: 20px;
+  height: 40px;
+  text-align: center;
 }
 
 .create_list {
@@ -194,17 +193,16 @@ footer {
 
 .edit_list:hover{
   font-size: 20px;
-
 }
+
 footer p {
   position : relative;
 }
 
 .fa-github {
-  margin : auto;
-  margin-left: 50%;
-  font-size: 120%;
+  font-size: 150%;
   color:white;
+  margin-top: 5px;
 }
 
 .fa-plus {
@@ -212,10 +210,6 @@ footer p {
   color : gold;
 }
 
-.copyright {
-  margin-left: 30px;
-  margin-top: 0px;
-}
 
 .show_show {
   float: right;
@@ -240,7 +234,6 @@ footer p {
 }
 .delete_entry:hover{
   font-size: 20px;
-
 }
 
 .delete_todo_list{
