@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to my first react App,
 
-Things you may want to cover:
+I created this project during my internship at Translation.io (https://translation.io)
 
-* Ruby version
+This code is my first experience with React and Ruby on rails, dont be to harsh :)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Thanks for your attention, Benjamin :)

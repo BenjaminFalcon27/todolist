@@ -200,9 +200,11 @@ footer p {
   position : relative;
 }
 
-.fa-home {
+.fa-github {
   margin : auto;
-  margin-left: 50%
+  margin-left: 50%;
+  font-size: 120%;
+  color:white;
 }
 
 .fa-plus {
