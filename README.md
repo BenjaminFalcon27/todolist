@@ -6,7 +6,7 @@ I created this project during my internship at Translation.io (https://translati
 
 This code is my first experience with React and Ruby on rails, I didnt tried to do a beautiful app, I just wanted to learn how to use React and RoR, so dont be too hard on me :)
 
-Thanks for your attention, Benjamin :)
+Thanks for your attention and have a nice day :)
 
 ## Installation
 
